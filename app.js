@@ -39,11 +39,46 @@ const sounds = [
   "fart38",
 ];
 
+const alternateTexts = [
+  "Spooky",
+  "Woof",
+  "Proof",
+  "Listen",
+  "Facts",
+  "What?",
+  "How?",
+  "Wacky",
+  "Wig!",
+  "Uh-uh",
+  "Dang",
+  "Ruh-ro",
+  "Oh no!",
+  "Yeesh",
+  "Oof",
+];
+
+let textIndex = 0;
+
 sounds.forEach((sound) => {
   const btn = document.createElement("button");
   btn.classList.add("btn");
 
-  btn.innerText = sound;
+  btn.innerText = alternateTexts[textIndex];
+  textIndex = (textIndex + 1) % alternateTexts.length;
+
+  btn.addEventListener("click", () => {
+    stopSound();
+    document.getElementById(sound).play();
+  });
 
   document.getElementById("buttons").appendChild(btn);
 });
+
+function stopSound() {
+  sounds.forEach((sound) => {
+    const song = document.getElementById(sound);
+
+    song.pause();
+    song.currentTime = 0;
+  });
+}
