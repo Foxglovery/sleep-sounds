@@ -1,21 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap");
-
 * {
   box-sizing: border-box;
+  font-family: "Playfair Display";
+}
+p {
+  font-size: 2rem;
 }
 
 body {
-  background-color: rebeccapurple;
-  font-family: "Mountains+of+Christmas";
+  /* background-color: rgb(190, 176, 118); */
+  background-image: url(/img/hallway.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Playfair Display";
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   height: 100vh;
   text-align: center;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;
 }
 
 .btn {
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: rgba(62, 146, 146, 0.6);
+  border-radius: 6px;
+  border: none;
+  margin: 1rem;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
