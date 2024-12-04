@@ -50,14 +50,24 @@ body {
   box-shadow: 0 0 10px;
 }
 
+footer a {
+  color: inherit; /* Inherit the footer text color */
+  text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Optional: Add underline on hover */
+  color: #ff9900; /* Optional: Change color on hover */
+}
+
 footer {
-  background-color: #333; /* Dark background for contrast */
-  color: #fff; /* White text for readability */
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
   text-align: center;
   padding: 10px 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 footer p {
-  margin: 0; /* Remove default paragraph margins */
+  margin: 0;
 }
