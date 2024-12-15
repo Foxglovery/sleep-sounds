@@ -25,6 +25,19 @@ body {
   color: black;
 }
 
+.carousel {
+  overflow: hidden;
+  width: 100%;
+}
+.carousel-track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.carousel button {
+  flex: 0 0 auto;
+}
+
 .btn {
   font-family: "Mountains of Christmas";
   font-size: 1.3rem;

@@ -57,6 +57,42 @@ const alternateTexts = [
   "Oof",
 ];
 
+const carousel = document.querySelector(".carousel");
+let isDragging = false;
+let startX, scrollLeft;
+
+// Mouse/touch start
+carousel.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startX = e.pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+carousel.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  startX = e.touches[0].pageX - carousel.offsetLeft;
+  scrollLeft = carousel.scrollLeft;
+});
+
+// Mouse/touch move
+carousel.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 2; // Increase multiplier for faster scrolling
+  carousel.scrollLeft = scrollLeft - walk;
+});
+carousel.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const x = e.touches[0].pageX - carousel.offsetLeft;
+  const walk = (x - startX) * 2;
+  carousel.scrollLeft = scrollLeft - walk;
+});
+
+// Stop dragging
+carousel.addEventListener("mouseup", () => (isDragging = false));
+carousel.addEventListener("mouseleave", () => (isDragging = false));
+carousel.addEventListener("touchend", () => (isDragging = false));
+
 let textIndex = 0;
 
 sounds.forEach((sound) => {
